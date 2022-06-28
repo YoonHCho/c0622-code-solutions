@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HTML Forms</title>
+</head>
+<body>
+  <h1>Coding Form!</h1>
+  <form>
+
+    <div>
+      <label for="email">Email</label>
+      <div>
+        <input type="email" id="email" maxlength="20" autocomplete="off">
+      </div>
+    </div>
+
+    <div>
+      <label for="reason">Why is coding cool?</label>
+      <div>
+        <select name="why" id="reason">
+          <option value="" selected disabled>Select an option</option>
+          <option value="interesting">Because it's interesting</option>
+          <option value="fun">Because it's fun</option>
+          <option value="powerful">Because it's powerful</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <p>Favorite Language (choose one)</p>
+      <label for="check_1">  <!-- doesn't need the for attribute if input is nest inside the label see other 2 -->
+        <input type="radio" name="language" value="HTML"> <!-- doesn't need id if input is wraped inside label see other 2-->
+        HTML
+      </label>
+      <label>
+        <input type="radio" name="language" value="CSS">
+        CSS
+      </label>
+      <label>
+        <input type="radio" name="language" value="JavaScript">
+        JavaScript
+      </label>
+    </div>
+
+    <div>
+      <p>Would you like to sign up for more information?</p>
+      <label for="check">
+        <input type="checkbox" name="signup" id="check">
+        Sign me up!
+      </label>
+    </div>
+
+    <div>
+      <label for="comments">Comments</label>
+      <div>
+        <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+      </div>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
