@@ -1,0 +1,19 @@
+input {
+  padding: 5px 10px;
+  font-size: 1.2rem;
+}
+
+input:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.header {
+  background-color: black;
+  color: white;
+}
+
+.odd {
+  background-color: lightgray;
+}
