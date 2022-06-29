@@ -9,11 +9,11 @@ input:hover {
   cursor: pointer;
 }
 
-.header {
+thead > tr:nth-child(-n+1) {
   background-color: black;
   color: white;
 }
 
-.odd {
+tbody > tr:nth-child(odd) {
   background-color: lightgray;
 }
