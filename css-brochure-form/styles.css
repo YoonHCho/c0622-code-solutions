@@ -50,9 +50,11 @@ select {
   opacity: 0.5;
 }
 
+div {
+  text-align: end;
+}
+
 button {
-  display: inline-block;
-  float: right;
   background-color: #ec5d57;
   border-radius: 25px;
   border: none;
