@@ -1,0 +1,29 @@
+* {
+  font-family: "Brandon Grotesque", sans-serif;
+}
+
+form {
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+
+h3 {
+  color: orangered;
+}
+
+input {
+  width: 100%;
+  text-indent: 7px;
+  margin-bottom: 10px;
+}
+
+label {
+  text-align: start;
+}
+
+select {
+  width: 100%;
+  background-color: lightgray;
+  margin-bottom: 10px;
+}
