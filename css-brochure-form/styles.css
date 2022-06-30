@@ -4,26 +4,59 @@
 
 form {
   text-align: center;
-  width: 60%;
+  width: 50%;
   margin: auto;
 }
 
 h3 {
   color: orangered;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 input {
   width: 100%;
-  text-indent: 7px;
-  margin-bottom: 10px;
+  text-indent: 10px;
+  margin-top: 3px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #a6aaa9;
+  height: 40px;
+  line-height: 5px;
 }
 
 label {
+  display: block;
   text-align: start;
+  text-transform: uppercase;
+  font-size: smaller;
+  text-indent: 10px;
+  font-weight: bold;
 }
 
 select {
   width: 100%;
-  background-color: lightgray;
+  background-color: #f3f3f3;
+  margin-top: 3px;
   margin-bottom: 10px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+::placeholder {
+  font-size: 19px;
+  color: #9a9a9a;
+  opacity: 0.5;
+}
+
+button {
+  display: inline-block;
+  float: right;
+  background-color: #ec5d57;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  width: 20%;
+  height: 30px;
 }
