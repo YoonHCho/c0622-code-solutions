@@ -1,0 +1,54 @@
+/* * {
+  border: 1px solid red;
+} */
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-third {
+  flex-basis: calc(100% / 3);
+}
+
+.nav-inline {
+  display: inline-block;
+}
+
+.background-lightgray {
+  background-color: #ebebeb;
+}
+
+.font-gray {
+  color: #6e6e6e;
+}
+
+.font-a {
+  font-family: Avenir, sans-serif;
+}
+
+.font-t {
+  font-family: "Tiempos Headline", sans-serif;
+}
+
+.font-t-italic {
+  font-family: "Tiempos Headline", sans-serif;
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.footer-nav-spacing {
+  padding-left: 2rem;
+}
+
+.footer-height {
+  height: 6rem;
+  align-items: center;
+}
