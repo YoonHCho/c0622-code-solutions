@@ -1,0 +1,72 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-fourth {
+  flex-basis: 50%;
+}
+
+.column-fifth {
+  flex-basis: 20%;
+}
+
+.column-four-fifth {
+  flex-basis: 80%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font {
+  font-family: Karla, sans-serif;
+}
+
+h1 {
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin: auto;
+  font-size: 2.6em;
+}
+
+.heading-margin {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  padding: 0 180px;
+}
+
+h3 {
+  text-align: left;
+  padding-right: 25%;
+  padding-top: 20px;
+}
+
+h3 + p {
+  text-align: left;
+  line-height: 2;
+  padding-right: 5%;
+}
+
+button {
+  margin: 50px 0;
+  background-color: white;
+  color: red;
+  letter-spacing: 1px;
+  border: 2px solid orangered;
+  width: 175px;
+  height: 40px;
+  font-weight: bold;
+}
