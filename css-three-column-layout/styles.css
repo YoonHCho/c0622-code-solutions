@@ -1,0 +1,70 @@
+#container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-thirds {
+  flex-basis: calc(100% / 3);
+}
+
+.text-white {
+  color: white;
+}
+
+.margin {
+  padding: 0 50px;
+}
+
+/* cant adjust the image */
+img {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+
+.white-circle {
+  display: flex;
+  background-color: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+
+.layout {
+  background-color: #1996da;
+  font-family: Lato, sans-serif;
+}
+
+.padding {
+  padding: 0 75px;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+p {
+  font-size: 0.7rem;
+  padding: 0 27px 20px;
+  text-align: center;
+  color: lightgray;
+}
+
+.bot {
+  margin-bottom: none;
+}
