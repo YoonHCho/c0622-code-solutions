@@ -42,6 +42,10 @@ h1 {
   font-size: 2.6em;
 }
 
+h1 + p {
+  margin-bottom: 50px;
+}
+
 .heading-margin {
   font-size: 0.8rem;
   line-height: 1.5;
@@ -57,7 +61,8 @@ h3 {
 h3 + p {
   text-align: left;
   line-height: 2;
-  padding-right: 5%;
+  padding-right: 65px;
+  font-size: small;
 }
 
 button {
