@@ -1,7 +1,3 @@
-/* * {
-  border: 1px solid red;
-} */
-
 .container {
   max-width: 1200px;
   margin: auto;
@@ -181,17 +177,29 @@ p.font-a.no-margin {
   padding-top: 3rem;
 }
 
+.padding-4rem {
+  padding: 4rem;
+}
+
+.margin-left0 {
+  margin-left: none;
+}
+
 .margin-b-1rem {
   margin-bottom: 1rem;
+}
+
+.margin-b-3rem {
+  margin-bottom: 3rem;
+}
+
+.margin-4rem {
+  margin: 4rem;
 }
 
 img.width-90 {
   width: 90%;
   position: relative;
-}
-
-.margin-4rem {
-  margin: 4rem;
 }
 
 .relative {
@@ -224,11 +232,15 @@ section > img {
   letter-spacing: 0.2rem;
 }
 
-.line-height {
+.line-height-2 {
   line-height: 2;
 }
 
-.padding-right-10rem {
+.line-height-1half {
+  line-height: 1.5;
+}
+
+.padding-right-9rem {
   padding-right: 9rem;
 }
 
@@ -247,4 +259,24 @@ p.font-a.margin-bot-2rem {
 
 .background-color-darkgray {
   background-color: #525351;
+}
+
+.no-bullet {
+  list-style: none;
+}
+
+.padding-right-12rem {
+  padding-right: 12rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: white;
+}
+
+.font-size-1three {
+  font-size: 1.3rem;
 }
