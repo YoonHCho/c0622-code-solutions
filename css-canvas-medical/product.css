@@ -1,0 +1,201 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.border {
+  border: 1px solid red;
+}
+
+.row {
+  display: flex;
+}
+
+.background-image {
+  height: 500px;
+  background-image: url("images/product/product-header.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+section > img {
+  width: 100%;
+  margin: auto;
+}
+
+div > img {
+  width: 100%;
+  margin: auto;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-90p {
+  flex-basis: 90%;
+}
+
+.column-80p {
+  flex-basis: 80%;
+}
+
+.column-50p {
+  flex-basis: 50%;
+}
+
+.column-20p {
+  flex-basis: 20%;
+}
+
+.text-right {
+  text-align: end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+.font-size-1p6rem {
+  font-size: 1.6rem;
+}
+
+.btn-contact {
+  color: white;
+  background-color: #294464;
+  width: 9rem;
+  height: 3.2rem;
+  border-radius: 5%;
+  font-size: 1.3rem;
+}
+
+.btn-started {
+  color: white;
+  background-color: #294464;
+  width: 12rem;
+  height: 3rem;
+  border-radius: 5%;
+  font-size: 1.3rem;
+}
+
+.margin-top7rem {
+  margin-top: 7rem;
+}
+
+.margin-top10rem {
+  margin-top: 10rem;
+}
+
+.margin-mix1 {
+  margin: 9rem 32rem 9rem 5rem;
+  font-size: 1.3rem;
+}
+
+.margin-t5rem-b2rem {
+  margin: 5rem 0 2rem;
+}
+
+.margin-mix1 > p {
+  margin-right: -8rem;
+  font-size: 1.1rem;
+}
+
+.margin-tb-rl-5rem {
+  padding: 20rem;
+}
+
+.margin-right-2rem {
+  margin-right: 2rem;
+}
+
+.margin-right-1rem {
+  margin-right: 1rem;
+}
+
+.margin-tb7rem-rl5rem {
+  margin: 7rem 5rem;
+}
+
+.padding-right-4rem {
+  padding-right: 4rem;
+}
+
+.indent-left-5rem {
+  padding-left: 5rem;
+}
+
+.btn-end {
+  width: 100%;
+  height: 100%;
+  text-align: end;
+}
+
+img.blue-logo {
+  width: 100%;
+}
+
+.font-gray {
+  color: #6e6e6e;
+}
+
+.font-white {
+  color: white;
+}
+
+.font-a {
+  font-family: Avenir, sans-serif;
+}
+
+.font-t {
+  font-family: "Tiempos Headline", sans-serif;
+}
+
+.font-t-italic {
+  font-family: "Tiempos Headline", sans-serif;
+  font-style: italic;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.fade {
+  position: absolute;
+  background: linear-gradient(rgb(0 0 0 / 15%), rgb(0 0 0 / 15%));
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.background-gray {
+  background-color: #ebebeb;
+}
+
+p a {
+  color: blue;
+}
+
+.font-size-1p2rem {
+  font-size: 1.2rem;
+}
