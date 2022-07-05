@@ -280,3 +280,18 @@ a:link {
 .font-size-1three {
   font-size: 1.3rem;
 }
+
+/* more added after 1st submit */
+.font-weight-400 {
+  font-weight: 400;
+}
+
+.font-gray2-opacity {
+  color: #f9f9f9;
+  opacity: 0.8;
+}
+
+.font-gray2 {
+  color: #707070;
+  opacity: 0.7;
+}
