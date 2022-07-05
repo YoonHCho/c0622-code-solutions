@@ -195,8 +195,8 @@ p.font-a.no-margin {
   margin-bottom: 3rem;
 }
 
-.margin-4rem {
-  margin: 4rem;
+.margin-1rem {
+  margin: 1rem;
 }
 
 img.width-90 {
@@ -267,8 +267,8 @@ p.font-a.margin-bot-2rem {
   list-style: none;
 }
 
-.padding-right-12rem {
-  padding-right: 12rem;
+.padding-right-23rem {
+  padding-right: 23rem;
 }
 
 a {
@@ -336,4 +336,12 @@ a:link {
 
 .line-height-2p3 {
   line-height: 2.3;
+}
+
+.margin-tb-2rem {
+  margin: 2rem 0;
+}
+
+.padding-5rem {
+  padding: 5rem;
 }
