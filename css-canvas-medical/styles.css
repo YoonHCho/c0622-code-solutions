@@ -329,3 +329,11 @@ a:link {
 .font-color-dg {
   color: #525351;
 }
+
+.font-size-1p1 {
+  font-size: 1.1rem;
+}
+
+.line-height-2p3 {
+  line-height: 2.3;
+}
