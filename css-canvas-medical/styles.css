@@ -90,6 +90,7 @@ ul {
   height: 3rem;
   border-radius: 5%;
   font-size: 1.3rem;
+  border: none;
 }
 
 .btn-contact {
@@ -99,6 +100,7 @@ ul {
   height: 2.8rem;
   border-radius: 5%;
   font-size: 1rem;
+  border: none;
 }
 
 h1 {
@@ -294,4 +296,28 @@ a:link {
 .font-gray2 {
   color: #707070;
   opacity: 0.7;
+}
+
+.font-size-2p2rem {
+  font-size: 2.2rem;
+}
+
+.opacity {
+  opacity: 0.8;
+}
+
+.font-size-0p97 {
+  font-size: 0.97rem;
+}
+
+.font-size-1rem {
+  font-size: 1rem;
+}
+
+.font-weight-100 {
+  font-weight: 100;
+}
+
+.font-size-1p2 {
+  font-size: 1.2rem;
 }
