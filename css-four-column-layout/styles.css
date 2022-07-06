@@ -1,0 +1,56 @@
+* {
+  font-family: Barlow, sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-25p {
+  flex-basis: 25%;
+}
+
+img {
+  width: 80%;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.background-gray {
+  background-color: #f7f8fa;
+}
+
+.padding-rl-7rem-bot1rem {
+  padding: 0 7rem 1rem;
+}
+
+.padding-rl-1rem {
+  padding: 0 1rem;
+}
+
+img.mini {
+  width: 20%;
+}
+
+.font-size-p8 {
+  font-size: 0.8rem;
+}
+
+.font-size-p6 {
+  font-size: 0.6rem;
+}
