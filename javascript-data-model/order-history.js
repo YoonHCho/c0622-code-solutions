@@ -79,4 +79,3 @@ var orderHistory = [
   }
 ];
 // end of array
-console.log(orderHistory[3].items[0].description);
