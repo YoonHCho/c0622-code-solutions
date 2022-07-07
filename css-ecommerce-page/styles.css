@@ -22,10 +22,6 @@
   color: #d5d5d5;
 }
 
-.border {
-  border: 1px solid black;
-}
-
 .container {
   max-width: 950px;
   margin: auto;
@@ -43,7 +39,23 @@
   flex-basis: 20%;
 }
 
-.img {
+img {
   width: 100%;
+}
+
+.object {
   object-fit: cover;
+  height: 261px;
+}
+
+.font-size-p7 {
+  font-size: 0.7rem;
+}
+
+.padding-lr-p5 {
+  padding: 0 0.5rem;
+}
+
+.font-size-1p3 {
+  font-size: 1.3rem;
 }
