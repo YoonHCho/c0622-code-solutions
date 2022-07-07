@@ -1,0 +1,61 @@
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.background-beige {
+  background-color: #fff2e7;
+}
+
+.background-white {
+  background-color: white;
+}
+
+.font-gray {
+  color: #d5d5d5;
+}
+
+.container {
+  max-width: 950px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-20p {
+  flex-basis: 20%;
+}
+
+img {
+  width: 100%;
+}
+
+.object {
+  object-fit: cover;
+  height: 261px;
+}
+
+.font-size-p7 {
+  font-size: 0.7rem;
+}
+
+.padding-lr-p5 {
+  padding: 0 0.5rem;
+}
+
+.font-size-1p3 {
+  font-size: 1.3rem;
+}
