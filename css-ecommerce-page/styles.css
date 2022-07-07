@@ -1,0 +1,49 @@
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.background-beige {
+  background-color: #fff2e7;
+}
+
+.background-white {
+  background-color: white;
+}
+
+.font-gray {
+  color: #d5d5d5;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.container {
+  max-width: 950px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-20p {
+  flex-basis: 20%;
+}
+
+.img {
+  width: 100%;
+  object-fit: cover;
+}
