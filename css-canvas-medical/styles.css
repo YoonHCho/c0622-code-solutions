@@ -350,3 +350,8 @@ a:link {
 .spacing {
   margin: 5rem;
 }
+
+.margin-tb-4rem {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
