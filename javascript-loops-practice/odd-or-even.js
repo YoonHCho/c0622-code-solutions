@@ -4,7 +4,9 @@ function oddOrEven(numbers) {
   for (var i = 0; i < numbers.length; i++) {
     if (numbers[i] % 2 === 0) {
       newArray.push('even');
-    } else newArray.push('odd');
+    } else {
+      newArray.push('odd');
+    }
   }
   return newArray;
 }
