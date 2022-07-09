@@ -75,10 +75,11 @@ li {
 .btn-contact {
   color: white;
   background-color: #294464;
-  width: 9rem;
-  height: 3.2rem;
+  width: 7rem;
+  height: 2.8rem;
   border-radius: 5%;
-  font-size: 1.3rem;
+  font-size: 1rem;
+  border: none;
 }
 
 .btn-started {
@@ -88,6 +89,7 @@ li {
   height: 3rem;
   border-radius: 5%;
   font-size: 1.3rem;
+  border: none;
 }
 
 .margin-top-none {
@@ -108,7 +110,6 @@ li {
 
 .margin-mix1 {
   margin: 9rem 32rem 9rem 5rem;
-  font-size: 1.3rem;
 }
 
 .margin-t5rem-b2rem {
@@ -117,7 +118,6 @@ li {
 
 .margin-mix1 > p {
   margin-right: -8rem;
-  font-size: 1.1rem;
 }
 
 .margin-tb-2rem {
@@ -248,4 +248,43 @@ a:link {
 
 .line-height-1half {
   line-height: 1.5;
+}
+
+.font-size-2p1 {
+  font-size: 2.1rem;
+}
+
+.weight-100 {
+  font-weight: 100;
+}
+
+.hero-paragraph {
+  font-size: 0.9rem;
+  padding-right: 7rem;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.font-color-blue {
+  color: #619ce3;
+}
+
+.padding-r-6rem {
+  padding-right: 6rem;
+}
+
+.font-size-1rem {
+  font-size: 1rem;
+}
+
+.opacity {
+  opacity: 0.7;
+}
+
+.no-style {
+  font-style: normal;
+}
+
+.visited:visited {
+  color: #aaaea6;
 }
