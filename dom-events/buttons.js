@@ -1,8 +1,7 @@
 function handleClick(event) {
   console.log('button clicked');
   console.log('event: ', event);
-  console.log('event.target: ', event.target.outerHTML);
-
+  console.log('event.target: ', event.target);
 }
 var $click = document.querySelector('.click-button');
 $click.addEventListener('click', handleClick);
