@@ -11,12 +11,6 @@
 */
 
 function capitalize(word) {
-  var capWord = '';
-  if (word.length === 1) return word.toUpperCase();
-  for (var i = 0; i < word.length; i++) {
-    if (i === 0) {
-      capWord += word[i].toUpperCase();
-    } else capWord += word[i].toLowerCase();
-  }
+  var capWord = word[0].toUpperCase() + word.substring(1).toLowerCase();
   return capWord;
 }
