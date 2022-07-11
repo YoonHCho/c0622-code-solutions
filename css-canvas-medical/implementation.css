@@ -1,0 +1,206 @@
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-60p {
+  flex-basis: 60%;
+}
+
+.column-50p {
+  flex-basis: 50%;
+}
+
+.column-25p {
+  flex-basis: 25%;
+}
+
+.font-a {
+  font-family: Avenir, sans-serif;
+}
+
+.font-t {
+  font-family: "Tiempos Headline", sans-serif;
+}
+
+.font-t-italic {
+  font-family: "Tiempos Headline", sans-serif;
+  font-style: italic;
+}
+
+.font-gray {
+  color: #828282;
+}
+
+.font-white {
+  color: white;
+}
+
+.btn-started {
+  color: white;
+  background-color: #294464;
+  width: 12rem;
+  height: 3rem;
+  border-radius: 5%;
+  font-size: 1.3rem;
+  border: none;
+}
+
+.btn-contact {
+  color: white;
+  background-color: #294464;
+  width: 7rem;
+  height: 2.8rem;
+  border-radius: 5%;
+  font-size: 1rem;
+  border: none;
+}
+
+.no-bullet {
+  list-style: none;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.link-color {
+  color: #3d6985;
+}
+
+.logo-height30px {
+  height: 30px;
+}
+
+.background-image {
+  background-image: url("./images/implementation/implementation-header.jpg");
+  width: 89%;
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 5rem auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.absolute-hero {
+  position: absolute;
+  width: 450px;
+  top: 6rem;
+  left: 4rem;
+  font-size: 0.9rem;
+}
+
+.fade {
+  background: linear-gradient(to right, #5b5959, #5b595900 75%, #c1c1c400 80%, #5b595900 80%, #5b5959);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.font-weight100 {
+  font-weight: 100;
+}
+
+.line-height {
+  line-height: 1.4;
+}
+
+.opacity {
+  opacity: 0.7;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.font-size-1p8 {
+  font-size: 1.8rem;
+}
+
+.weight100-size1 {
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.fontp8-padr2 {
+  font-size: 0.8rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.padding-left1p5 {
+  padding-left: 1.5rem;
+}
+
+.margin-bot7rem {
+  margin-bottom: 7rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.background-color-darkgray {
+  background-color: #525351;
+}
+
+.padding-3p5 {
+  padding: 3.5rem;
+}
+
+.margin-top3rem {
+  margin-top: 3rem;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.margin1 {
+  margin: 1rem;
+}
+
+.background-lightgray {
+  background-color: #ebebeb;
+}
+
+.margin-left2 {
+  margin-left: 2rem;
+}
+
+.padding-left3p5 {
+  padding-left: 3.5rem;
+}
+
+.padding-right3p5 {
+  padding-right: 3.5rem;
+}
