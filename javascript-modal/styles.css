@@ -1,0 +1,64 @@
+* {
+  font-family: sans-serif;
+}
+
+.row {
+  display: flex;
+}
+
+.modal-btn {
+  color: white;
+  background-color: #4a4ae9;
+  width: 160px;
+  height: 35px;
+  border: none;
+  border-radius: 7px;
+  font-size: 18px;
+  box-shadow: 0 3px 5px 0 rgb(0 0 0 / 75%);
+}
+
+.pop-up {
+  background-color: black;
+  width: 300px;
+  height: 130px;
+  padding-bottom: 10px;
+  border-radius: 7px;
+  visibility: hidden;
+
+  /* this need to toggle on off. */
+}
+
+.no-btn {
+  background-color: #eb5d5d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+p {
+  color: white;
+  font-weight: bold;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.background-on {
+  background-color: #323232;
+  opacity: 0.3;
+}
