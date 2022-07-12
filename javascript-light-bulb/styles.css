@@ -1,0 +1,38 @@
+.row {
+  display: flex;
+  height: 97vh;
+}
+
+.circle-on {
+  background-color: #faea84;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 185px 6px rgb(240 235 130 / 59%);
+}
+
+.circle-off {
+  background-color: #252525;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 82px 6px rgb(2 2 2 / 59%);
+}
+
+.backgroud-on {
+  background: #fef9f1;
+}
+
+.backgroud-off {
+  background: #111;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
