@@ -1,20 +1,14 @@
-var modalBtn = document.querySelector('.modal');
+var modalBtn = document.querySelector('.modal-btn');
 var noBtn = document.querySelector('.no-btn');
-var popUp = document.querySelector('.pop-up');
-
-/* console.log(modalBtn);
-console.log(noBtn);
-console.log(popUp); */
+var popUp = document.querySelector('div');
 
 modalBtn.addEventListener('click', showPopUp);
 noBtn.addEventListener('click', hidePopUp);
 
 function showPopUp(event) {
-/*   console.log('test');
-  background.className = 'background-on'; */
+  popUp.classList.remove('hidden');
 }
 
-function hidePopUp() {
-  popUp.className = 'pop-up-hide fixed';
-  /* background.className = ''; */
+function hidePopUp(event) {
+  popUp.classList.add('hidden');
 }
