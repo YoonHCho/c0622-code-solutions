@@ -1,12 +1,29 @@
-* {
+body {
   font-family: sans-serif;
+}
+
+.container {
+  width: auto;
+  height: auto;
 }
 
 .row {
   display: flex;
 }
 
-.modal-btn {
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-half {
+  flex-basis: 50%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.modal {
   color: white;
   background-color: #4a4ae9;
   width: 160px;
@@ -17,15 +34,96 @@
   box-shadow: 0 3px 5px 0 rgb(0 0 0 / 75%);
 }
 
+.full-view {
+  height: 100%;
+  width: 100%;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.origin {
+  transform: translate(0, 0);
+}
+
+.fix {
+  position: fixed;
+  top: 0;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
 .pop-up {
-  background-color: black;
-  width: 300px;
-  height: 130px;
+  display: block;
+  background-color: white;
+  color: black;
+  font-size: small;
+  width: 350px;
+  height: 150px;
+  padding-bottom: 10px;
+  border-radius: 7px;
+  visibility: visible;
+  box-shadow: -1px -1px 600px 5000px rgb(0 0 0 / 70%);
+}
+
+.no-btn {
+  background-color: #eb5d5d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 90px;
+  height: 40px;
+  font-size: 22px;
+}
+
+.font-padding {
+  font-size: 27px;
+  padding-bottom: 20px;
+}
+
+/* redo */
+
+/* .modal-btn {
+  color: white;
+  background-color: #4a4ae9;
+  width: 160px;
+  height: 35px;
+  border: none;
+  border-radius: 7px;
+  font-size: 18px;
+  box-shadow: 0 3px 5px 0 rgb(0 0 0 / 75%);
+}
+
+.pop-up-hide {
+  background-color: white;
+  color: black;
+  width: 350px;
+  height: 150px;
   padding-bottom: 10px;
   border-radius: 7px;
   visibility: hidden;
+}
 
-  /* this need to toggle on off. */
+.pop-up-show {
+  background-color: white;
+  color: black;
+  font-size: small;
+  width: 350px;
+  height: 150px;
+  padding-bottom: 10px;
+  border-radius: 7px;
+  visibility: visible;
+  box-shadow: -1px -1px 400px 200px rgb(0 0 0 / 100%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
 }
 
 .no-btn {
@@ -45,20 +143,31 @@
   align-items: center;
 }
 
-p {
-  color: white;
-  font-weight: bold;
-}
-
 .wrap {
   flex-wrap: wrap;
 }
 
-.full-height {
+.full-view {
   height: 100vh;
+  width: 100%;
 }
 
 .background-on {
   background-color: #323232;
   opacity: 0.3;
 }
+
+.text-center {
+  text-align: center;
+  transform-origin: center;
+}
+
+.mp {
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.pt-10 {
+  padding-top: 20px;
+}
+ */
