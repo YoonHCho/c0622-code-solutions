@@ -1,0 +1,66 @@
+body {
+  font-family: sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.modal-btn {
+  color: white;
+  background-color: #4a4ae9;
+  width: 160px;
+  height: 35px;
+  border: none;
+  border-radius: 7px;
+  font-size: 18px;
+  box-shadow: 0 3px 5px 0 rgb(0 0 0 / 75%);
+}
+
+.origin {
+  transform: translate(-50%, -50%);
+}
+
+.fix {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.hidden {
+  display: none;
+}
+
+.pop-up {
+  display: block;
+  background-color: white;
+  color: black;
+  font-size: small;
+  width: 350px;
+  height: 150px;
+  padding-bottom: 10px;
+  border-radius: 7px;
+  box-shadow: -1px -1px 600px 5000px rgb(0 0 0 / 70%);
+}
+
+.no-btn {
+  background-color: #eb5d5d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 90px;
+  height: 40px;
+  font-size: 22px;
+}
+
+.font-padding {
+  font-size: 18px;
+}
+
+.pad-10 {
+  padding: 10px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
