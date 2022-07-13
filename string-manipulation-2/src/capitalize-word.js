@@ -13,8 +13,7 @@
 function capitalizeWord(word) {
   word = word.toLowerCase();
   if (word === 'javascript') {
-    word = word[0].toUpperCase() + word.substring(1, 4) + word[4].toUpperCase() + word.substring(5);
-    return word;
+    return 'JavaScript';
   } else {
     word = word[0].toUpperCase() + word.substring(1);
     return word;
