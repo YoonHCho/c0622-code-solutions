@@ -1,0 +1,30 @@
+* {
+  font-family: monospace;
+}
+
+.fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.origin {
+  transform: translate(-50%, -50%);
+}
+
+.current {
+  border-bottom: solid black;
+}
+
+.correct {
+  color: #18cd1b;
+}
+
+.incorrect {
+  color: #f80606;
+  border-bottom: solid #f80606;
+}
+
+.space {
+  white-space: pre;
+}
