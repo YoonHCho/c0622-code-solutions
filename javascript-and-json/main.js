@@ -23,7 +23,7 @@ var jsonString = JSON.stringify(books);
 console.log('jsonString: ', jsonString);
 console.log('typeof jsonString: ', typeof jsonString);
 
-var thirdString = '{"Number ID": "714", "Student Name": "Yoon"}';
+var thirdString = '{"Number ID": 714, "Student Name": "Yoon"}';
 console.log('thirdString: ', thirdString);
 console.log('typeof thirdString: ', typeof thirdString);
 
