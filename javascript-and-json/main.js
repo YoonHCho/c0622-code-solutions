@@ -23,10 +23,10 @@ var jsonString = JSON.stringify(books);
 console.log('jsonString: ', jsonString);
 console.log('typeof jsonString: ', typeof jsonString);
 
-var thirdString = JSON.stringify({ 714: 'Yoon' });
+var thirdString = '{"Number ID": "714", "Student Name": "Yoon"}';
 console.log('thirdString: ', thirdString);
 console.log('typeof thirdString: ', typeof thirdString);
 
-var parseString = JSON.parse(thirdString);
-console.log('parseString: ', parseString);
-console.log('typeof parseString: ', typeof parseString);
+var parseOjb = JSON.parse(thirdString);
+console.log('parseString: ', parseOjb);
+console.log('typeof parseString: ', typeof parseOjb);
