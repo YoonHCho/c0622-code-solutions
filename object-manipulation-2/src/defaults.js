@@ -16,10 +16,6 @@
 */
 
 function defaults(target, source) {
-  var sourcelength = Object.keys(source);
-  if (sourcelength.length === 0) {
-    return target;
-  }
   for (var sourceProp in source) {
     var counter = 0;
     for (var targetProp in target) {
