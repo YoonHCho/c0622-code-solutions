@@ -4,7 +4,7 @@ var student = {
   firstName: 'Yoon',
   lastName: 'Cho',
   subject: 'JavaScript',
-  getFullName: function (firstName, lastName) {
+  getFullName: function () {
     return this.firstName + ' ' + this.lastName;
   },
   getIntroduction: function () {
