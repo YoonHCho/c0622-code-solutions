@@ -15,8 +15,8 @@ function countDown() {
     $countDown.textContent = '~Earth Beeeelooowww Us~';
     clearInterval(intervalId);
     intervalId = null;
-    return;
+  } else {
+    counter--;
+    $countDown.textContent = counter;
   }
-  counter--;
-  $countDown.textContent = counter;
 }
