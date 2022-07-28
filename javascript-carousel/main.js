@@ -10,11 +10,15 @@ var $thruImages = document.querySelector('.thru-images');
 var $circle = document.querySelectorAll('.circle');
 var currentIndex = 0;
 
-setInterval(thruImages, 3000);
+var intervalTimer = setInterval(thruImages, 3000);
 var $rightArrow = document.querySelector('.right-arrow');
 $rightArrow.addEventListener('click', thruImages);
 
-function thruImages() {
+function thruImages(event) {
+  if (event) {
+    clearInterval(intervalTimer);
+    intervalTimer = setInterval(thruImages, 3000);
+  }
   currentIndex++;
   if (currentIndex < 5) {
     $thruImages.setAttribute('src', imageURL[currentIndex]);
@@ -31,6 +35,8 @@ function thruImages() {
 var $leftArraow = document.querySelector('.left-arrow');
 $leftArraow.addEventListener('click', oneBefore);
 function oneBefore(event) {
+  clearInterval(intervalTimer);
+  intervalTimer = setInterval(thruImages, 3000);
   currentIndex--;
   if (currentIndex < 0) {
     $circle[currentIndex + 1].classList.replace('fa-solid', 'fa-regular');
@@ -47,6 +53,8 @@ function oneBefore(event) {
 var $circleList = document.querySelector('.circle-list');
 $circleList.addEventListener('click', whichCircImg);
 function whichCircImg(event) {
+  clearInterval(intervalTimer);
+  intervalTimer = setInterval(thruImages, 3000);
   $circle[currentIndex].classList.replace('fa-solid', 'fa-regular');
   currentIndex = event.target.getAttribute('data-id');
   $circle[currentIndex].classList.replace('fa-regular', 'fa-solid');

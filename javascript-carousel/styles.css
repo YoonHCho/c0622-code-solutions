@@ -1,8 +1,18 @@
 .container {
   box-sizing: border-box;
   width: 800px;
-  height: 500px;
+  height: 400px;
   margin: auto;
+  box-shadow: rgb(50 50 93 / 25%) 0 50px 100px -20px;
+  border-radius: 5px;
+}
+
+.box-shadow-1 {
+  box-shadow: rgb(0 0 0 / 30%) 0 30px 60px -30px;
+}
+
+.box-shadow-2 {
+  box-shadow: rgb(10 37 64 / 35%) 0 -2px 6px 0;
 }
 
 .borders {
