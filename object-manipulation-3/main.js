@@ -39,31 +39,26 @@ var cards = [
 var players = [
   {
     name: 'Player 1',
-    hand: []
+    hand: [],
+    deal: true
   },
   {
     name: 'Player 2',
-    hand: []
+    hand: [],
+    deal: true
   },
   {
     name: 'Player 3',
-    hand: []
+    hand: [],
+    deal: true
   },
   {
     name: 'Player 4',
-    hand: []
+    hand: [],
+    deal: true
   }
 ];
 
-// random suit
-// var randomSuit = Math.floor(Math.random() * cards.length);
-
-// random rank for that suit
-// var randomRank = Math.floor(Math.random() * cards[randomSuit].rank.length);
-
-console.log(cards);
-
-// need a function to deal 2 cards to each player. no duplicate cards.
 var giveCards = 2;
 function dealCards() {
   var playerCount = players.length;
@@ -94,8 +89,27 @@ function dealCards() {
   }
 }
 
+dealCards();
+console.log('cards after deal: ', cards);
+
+// can call this function as calcScore
+for (var i = 0; i < players.length; i++) {
+  var score = 0;
+  for (var k = 0; k < players[i].hand.length; k++) {
+    if (Number.isInteger(players[i].hand[k][1])) {
+      score += players[i].hand[k][1];
+    } else if (players[i].hand[k][1] === 'ace') {
+      score += 11;
+    } else {
+      score += 10;
+    }
+  }
+  players[i].score = score;
+  console.log(players[i].name + ' has scored ' + players[i].score);
+}
+
+// need a function to declare a winner
 // function whoWins() {
 //   for ()
 // }
-dealCards();
 console.log(converter);
