@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container box-shadow-1 box-shadow-2">
+    <div class="row wrap align-center">
+      <div class="col-15 text-center left-arrow">
+        <i class="fa-solid fa-angle-left font-size-3rem"></i>
+      </div>
+
+      <div class="col-70">
+        <div class="row wrap justify-center">
+          <div class="col-full text-center">
+            <img src="images/001.png" class="thru-images">
+          </div>
+          <div class="col-full text-center margin-t35 circle-list">
+            <i class="circle fa-solid fa-circle margin-lr" data-id="0"></i>
+            <i class="circle fa-regular fa-circle margin-lr" data-id="1"></i>
+            <i class="circle fa-regular fa-circle margin-lr" data-id="2"></i>
+            <i class="circle fa-regular fa-circle margin-lr" data-id="3"></i>
+            <i class="circle fa-regular fa-circle margin-lr" data-id="4"></i>
+            <!-- if clicked use <i class="fa-solid fa-circle"></i> -->
+          </div>
+        </div>
+
+      </div>
+      <div class="col-15 text-center right-arrow">
+        <i class="fa-solid fa-angle-right font-size-3rem"></i>
+      </div>
+
+
+
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
