@@ -93,3 +93,46 @@ solution3(261534);
  * For a = [-1, 150, 190, 170, -1, -1, 160, 180], the output should be
  * solution(a) = [-1, 150, 160, 170, -1, -1, 180, 190].
 */
+function solution4(a) {
+  var trees = [];
+  var height = [];
+  var combine = [];
+  // separate from people and trees
+  for (var i = 0; i < a.length; i++) {
+    if (a[i] === -1) {
+      trees.push(i);
+    } else {
+      height.push(a[i]);
+    }
+  }
+  // come back to try sorting without the sort method. use one of the sorting algorithm.
+  height.sort(function (a, b) {
+    return a - b;
+  });
+  // now push all into one
+  for (var k = 0; k < a.length; k++) {
+    if (trees.includes(k)) {
+      combine.push(-1);
+    } else {
+      combine.push(height[0]);
+      height.shift();
+    }
+  }
+  return combine;
+}
+solution4([23, 54, -1, 43, 1, -1, -1, 77, -1, -1, -1, 3]);
+
+/** REVERSE IN PARENTHESES
+ * Write a function that reverses characters in (possibly nested) parentheses in the input string.
+ * Input strings will always be well-formed with matching ()s.
+ * Example
+ * For inputString = "(bar)", the output should be
+ * solution(inputString) = "rab";
+ * For inputString = "foo(bar)baz", the output should be
+ * solution(inputString) = "foorabbaz";
+ * For inputString = "foo(bar)baz(blim)", the output should be
+ * solution(inputString) = "foorabbazmilb";
+ * For inputString = "foo(bar(baz))blim", the output should be
+ * solution(inputString) = "foobazrabblim".
+ * Because "foo(bar(baz))blim" becomes "foo(barzab)blim" and then "foobazrabblim".
+ */
