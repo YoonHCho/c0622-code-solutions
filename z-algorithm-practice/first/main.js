@@ -123,3 +123,68 @@ solution6([6, 2, 3, 8]);
  * solution(sequence) = true.
  * You can remove 3 from the array to get the strictly increasing sequence [1, 2].
  * Alternately, you can remove 2 to get the strictly increasing sequence [1, 3]. */
+
+function solution7(sequence) {
+  var counter = 0;
+  for (var i = 0; i < sequence.length - 1; i++) {
+    if (!(sequence[i + 1] > sequence[i])) {
+      counter++;
+      if (sequence[i] >= sequence[i + 2]) {
+        sequence.splice(i, 1);
+        i = -1;
+      } else {
+        sequence.splice(i + 1, 1);
+        i = -1;
+      }
+    }
+    if (counter >= 2) {
+      return false;
+    }
+  }
+  return true;
+}
+solution7([1, 2, 5, 3, 5]);
+
+/** After becoming famous, the CodeBots decided to move into a new building together. Each of the rooms has a different cost,
+ * and some of them are free, but there's a rumour that all the free rooms are haunted! Since the CodeBots are quite superstitious,
+ * they refuse to stay in any of the free rooms, or any of the rooms below any of the free rooms.
+ * Given matrix, a rectangular matrix of integers, where each value represents the cost of the room,
+ * your task is to return the total sum of all rooms that are suitable for the CodeBots
+ * (ie: add up all the values that don't appear below a 0).
+ * Example
+ * For
+ * matrix = [[0, 1, 1, 2],
+ *           [0, 5, 0, 0],
+ *           [2, 0, 3, 3]]
+ * the output should be
+ * solution(matrix) = 9.
+ * There are several haunted rooms, so we'll disregard them as well as any rooms beneath them. Thus, the answer is 1 + 5 + 1 + 2 = 9.
+ * For
+ * matrix = [[1, 1, 1, 0],
+ *           [0, 5, 0, 1],
+ *           [2, 1, 3, 10]]
+ * the output should be
+ * solution(matrix) = 9.
+ * Note that the free room in the final column makes the full column unsuitable for bots (not just the room directly beneath it).
+ * Thus, the answer is 1 + 1 + 1 + 5 + 1 = 9.
+ * */
+
+function solution8(matrix) {
+  var sum = 0;
+  for (var i = 0; i < matrix.length; i++) {
+    for (var k = 0; k < matrix[i].length; k++) {
+      if (matrix[i][k] === 0) {
+        for (var m = i + 1; m < matrix.length; m++) {
+          matrix[m][k] = 0;
+        }
+      } else {
+        sum += matrix[i][k];
+      }
+    }
+  }
+  return sum;
+}
+solution8([[4, 0, 1],
+  [10, 7, 0],
+  [0, 0, 0],
+  [9, 1, 2]]);
