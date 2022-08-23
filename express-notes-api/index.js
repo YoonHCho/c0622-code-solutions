@@ -14,7 +14,7 @@ app.get('/api/notes', (req, res) => {
 
 app.get('/api/notes/:id', (req, res) => {
   const idNum = Number(req.params.id);
-  if (idNum < 0 || isNaN(idNum)) {
+  if (idNum <= 0 || !Number.isInteger(idNum)) {
     res.status(400).json({ error: 'id must be a positive integer' });
   } else if (!dataJSON.notes[idNum]) {
     res.status(404).json({ error: 'cannot find note with id ' + idNum });
@@ -51,7 +51,7 @@ app.post('/api/notes/', (req, res) => {
 
 app.delete('/api/notes/:id', (req, res) => {
   const idNum = Number(req.params.id);
-  if (idNum < 0 || isNaN(idNum)) {
+  if (idNum <= 0 || !Number.isInteger(idNum)) {
     res.status(400).json({ error: 'id must be a positive integer' });
   } else if (dataJSON.notes[idNum] === undefined) {
     res.status(404).json({ error: 'cannot find note with id ' + idNum });
@@ -71,7 +71,7 @@ app.delete('/api/notes/:id', (req, res) => {
 
 app.put('/api/notes/:id', (req, res) => {
   const idNum = Number(req.params.id);
-  if (idNum < 0 || isNaN(idNum)) {
+  if (idNum <= 0 || !Number.isInteger(idNum)) {
     res.status(400).json({ error: 'id must be a positive integer' });
   } else if (!req.body.content) {
     res.status(400).json({ error: 'content is a required field' });
@@ -85,7 +85,7 @@ app.put('/api/notes/:id', (req, res) => {
         console.error(err);
         res.status(500).json({ error: 'An unexpected error occurred.' });
       } else {
-        res.sendStatus(200);
+        res.status(200).json(dataJSON.notes[idNum]);
       }
     });
   }
