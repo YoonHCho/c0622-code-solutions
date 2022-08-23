@@ -38,7 +38,7 @@ app.post('/api/notes/', (req, res) => {
     const dataJSONString = JSON.stringify(dataJSON, null, 1);
     fs.writeFile('./data.json', dataJSONString, err => {
       if (err) {
-        console.error('CONSOLE.error: ', err);
+        console.error(err);
         res.status(500).json({ error: 'An unexpected error occurred.' });
       } else {
         res.json(req.body);
@@ -46,6 +46,26 @@ app.post('/api/notes/', (req, res) => {
     });
   } else {
     res.status(400).json({ error: 'content is a required field' });
+  }
+});
+
+app.delete('/api/notes/:id', (req, res) => {
+  const idNum = Number(req.params.id);
+  if (idNum < 0 || isNaN(idNum)) {
+    res.status(400).json({ error: 'id must be a positive integer' });
+  } else if (dataJSON.notes[idNum] === undefined) {
+    res.status(404).json({ error: 'cannot find note with id ' + idNum });
+  } else {
+    const dataJSONString = JSON.stringify(dataJSON, null, 1);
+    fs.writeFile('./data.json', dataJSONString, err => {
+      if (err) {
+        console.error(err);
+        res.status(500).json({ error: 'An unexpected error occurred.' });
+      } else {
+        delete dataJSON.notes[req.params.id];
+        res.sendStatus(204);
+      }
+    });
   }
 });
 
