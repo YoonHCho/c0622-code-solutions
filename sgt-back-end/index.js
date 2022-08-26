@@ -45,7 +45,7 @@ app.post('/api/grades/', (req, res) => {
   } else if (!course) {
     res.status(400).json({ error: 'course is a required field' });
     return;
-  } else if (!Number.isInteger(score) || score <= 0) {
+  } else if (!Number.isInteger(score) || score < 0 || score > 100) {
     res.status(400).json({ error: 'score must be a positive integer' });
     return;
   }
@@ -85,7 +85,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
   } else if (!course) {
     res.status(400).json({ error: 'course is a required field' });
     return;
-  } else if (!Number.isInteger(score) || score <= 0) {
+  } else if (!Number.isInteger(score) || score < 0 || score > 100) {
     res.status(400).json({ error: 'score must be a positive integer' });
     return;
   }
