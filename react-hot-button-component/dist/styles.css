@@ -1,0 +1,37 @@
+button {
+  width: 120px;
+  height: 30px;
+  border-style: hidden;
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 19%) 0 10px 20px, rgb(0 0 0 / 23%) 0 6px 6px;
+}
+
+.color-3 {
+  background-color: #351c75;
+  color: white;
+}
+
+.color-6 {
+  background-color: #674ea7;
+  color: white;
+}
+
+.color-9 {
+  background-color: #e06666;
+  color: white;
+}
+
+.color-12 {
+  background-color: #f6b26b;
+  color: black;
+}
+
+.color-15 {
+  background-color: #ff0;
+  color: black;
+}
+
+.color-18 {
+  background-color: white;
+  color: black;
+}
