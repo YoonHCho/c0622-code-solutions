@@ -24,12 +24,14 @@ class StopWatch extends React.Component {
     }
   }
 
-  pauseWatch() {
-    if (!this.state.start) {
+  pauseWatch(e) {
+    if (!this.state.start && e.target.nodeName === 'BUTTON') {
       this.setState({ count: 0 });
     }
-    this.setState({ start: false });
-    clearInterval(this.timeId);
+    if (this.state.start && e.target.nodeName === 'I') {
+      this.setState({ start: false });
+      clearInterval(this.timeId);
+    }
   }
 
   render() {
