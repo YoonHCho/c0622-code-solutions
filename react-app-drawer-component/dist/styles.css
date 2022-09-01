@@ -2,6 +2,10 @@
   display: none !important;
 }
 
+.main {
+  height: 100vh;
+}
+
 i {
   font-size: 35px;
 }
@@ -12,6 +16,7 @@ i:hover {
 
 h3:hover {
   cursor: pointer;
+  background-color: rgb(109 107 107 / 70%);
 }
 
 .background-grey {
@@ -24,8 +29,7 @@ h3:hover {
 }
 
 .open-drawer {
-  border: 1px solid red;
-  width: 30%;
+  width: 160px;
   height: 100vh;
   padding-left: 15px;
   background-color: white;
