@@ -1,0 +1,28 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-100 {
+  flex-basis: 100%;
+}
+
+button {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 7px solid black;
+  font-size: 100px;
+}
+
+i {
+  padding-top: 25px;
+  font-size: 40px;
+}
+
+.text-align {
+  text-align: center;
+}
