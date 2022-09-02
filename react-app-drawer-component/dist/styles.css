@@ -1,0 +1,39 @@
+.hidden {
+  display: none !important;
+}
+
+.main {
+  height: 100vh;
+}
+
+i {
+  font-size: 35px;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+h3:hover {
+  cursor: pointer;
+  background-color: rgb(109 107 107 / 70%);
+}
+
+.background-grey {
+  position: absolute;
+  background: linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%));
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.open-drawer {
+  width: 160px;
+  height: 100vh;
+  padding-left: 15px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
