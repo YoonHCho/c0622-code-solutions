@@ -25,12 +25,12 @@ class RegistrationForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log('state', this.state);
-
+    this.setState({ username: '', password: '' });
   }
 
   render() {
     return (
-        <form>
+      <form onSubmit={ this.handleSubmit }>
           <label>
             Username:
             <input
@@ -50,7 +50,7 @@ class RegistrationForm extends React.Component {
             />
           </label>
           <label>
-          <button type="submit" onClick={ this.handleSubmit }>Sign Up</button>
+          <button>Sign Up</button>
           </label>
         </form>
     );
