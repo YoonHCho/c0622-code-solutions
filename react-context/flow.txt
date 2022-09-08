@@ -1,14 +1,224 @@
 Create a file in the root of your react-context solution directory named flow.txt.
 For each feature in the application, describe the flow of the code in writing,
 including the client, server, and database. How does the code work?
+**********************************************************************************
+** Need to write all the code, why the code is there and when it's used**
 
+*** server/public/index.html ***
+when application runs, browser sends a 'GET' request to get the HTML document which
+ is in /server/public/index.html the HTML gets loading in the browser. it will load
+ the bootstrap prebuilt CSS classes and fontawesome CSS classes.
+
+*** /server/dev-middleware.js ***
+the webpack will within "dev-middleware.js" file will give the main.js
+(which is a bundle of modules put together by webpack), once the client receives
+the whole javascript, it will then run the front-end code, the entry point is index.jsx
+file in the client directory.
+
+*** client/index.jsx ***
+will import React from 'react' package, import ReactDOM from 'react-dom/client' package,
+and will import App component. these will be all bundled together. grab the #root
+div from HTML document, create a react root and tell react to start the application
+by rendering the root with React element App.
+
+*** /client/app.jsx ***  (route property primary role is to decide which screen to show, based on the parsedRoute)
+After importing all the neccessary packages and components listed on app.jsx, will
+start the React Lifecycle.
+In the Mounting phase.
+Call the constructor with props within the constructor function code block call
+the super(props), initialize this.state with three properties, user: null, isAuthorizing: true,
+route: parseRoute(window.location.hash) route is used to know what screen to start with,
+grabs the current window location and closing constructor code block.
+then need to bind the event handler methods (handleSignIn and handleSignOut) to an instance.
+will read but skip the all the methods being defined and will run the FIRST render().
+since this.state.isAuthorizing is true will return null, and will run the componentDidMount method.
+Since there was no event, window.addEventListener will skip, but will be available
+to use for future 'hashchange'. if the hash of the URL bar changes, will notify
+the components and component is going to reparse the new hash and setState to the new route.
+and will assign the variable token and user based on if condition, and will setState
+user null and isAuthorizing: false, and setState triggers render to run.
+
+<also similarly repeated step from line 115>
+user and route is being destructured from the property of this object and assign
+to const variable user and route. handleSignIn and handleSignOut is being destructured
+from this and assign to const handleSignIn and handleSignOut.
+variable user, route, handleSignIn, and handleSignOut as an object will be assigned
+to contextValue. this is so that the value of the variables in the object can be
+accessed throughout the component tree, to it's subscribers making it easier to access it.
+will return the following result of expression. starting with React Fragment
+AppContext.Provider value={contextValue} is there to make the contextValue
+available to its consumers, pass down to component tree.
+React Element Navbar navbar.jsx
+React Element PageContainer passing { this.renderPage() } page-container.jsx
+
+*** client/components/navbar.jsx ***
+will also import React and AppContext (at the end of the file will have the contextType
+to be a consumer/subscriber to use the props). will run render and will destructure
+user and handleSignOut props passed down. component will return the result of expression:
+the HTML elements and within the javascript expression
+  { user === null ... }
+  ^ if the user is null (currently not signed in, is default), will have following:
+  <a> link with sign in, if you already registered
+  <a> link with sign up, if you want to register.
+
+*** client/components/page-container.jsx ***
+there is the styles object to use as CSS Style for the return of the PageContainer function.
+function has the parameter 'children' passed from app.jsx which is the renderPage() method from
+App component as a parameter destructuring. divs will structure the container and apply the
+CSS styles.page. children which calls renderPage() from App component, since the current
+path is 'sign-in' will return React Element <Auth />
+
+*** client/pages/auth.jsx ***
+will import that's listed. class is defined with name AuthPage that extends from Component property
+of the React object the return is assigned to default of the export object.
+will render, destructure user, route, handleSignIn properties of the context prop of this object is
+assigned to const variable user, route, handleSignIn. able to access this.context from App component
+by adding contextType at the bottom of the file. if user is true, will return React El. <Redirect>
+but since user is still null. and the path is 'sign-in' the welcomeMessage will be assigned with a
+string 'Please sign in to continue'
+will return the result of expression for following:
+will have divs, header, h2, icon, paragraph with classNames
+within the header, h2 element will have the icon with string 'Awesome App' then below the h2
+a paragraph with a value of the variable welcomeMessage that was assigned earlier. after the header
+React El. AuthForm with props key, action, onSignIn (event). the valuse of these are the variables that
+was destructured earlier.
+
+*** client/component/auth-form.jsx ***
+import then will define a class with name AuthForm. call the constructor with props
+and inside the function code block, call super with props, initialize this.state with empty
+string for properties username and pass word.
+bind two methods handleChange and handleSubmit.
+in render destructure happens:
+the value of variable action is 'sign-in', action prop had the value of 'sign-in' from auth.jsx route.path
+
+assigns alternateActionHref with string '#sign-up' // to toggle between different page by href prop
+assigns alternatActionText with string 'Register now'
+assigns submitButtonText with string 'Log In'
+
+will return the result of expression of following:
+a form with onSubmit(event) to call handleSubmit method once (details later)
+there are two input element, with a onChange(event) prop to call the handleChange method.
+in order to know which input is being changed in the method, first assign username
+and password in each input element on the prop name.
+input need a prop name (to determin which input) and onChange, also has other props,
+required prop to indicate an input is required and autoFocus to have the 1st input
+focus(active) when page loads, input for username and password will show with text boxes
+<a> link will show the value of the variable alternateActionHref. 'Register now' link
+<button> for the value of the variable submitButtonText to log-in a user. 'Log-in' button
+
+*** /lib/parse-route.js. *** (for future reference from line 123, 157)
+will check if it starts with '#' sign and chops it off.
+will destructure 1st and 2nd element from the return of the split method of the
+hashRoute object with the string '?' and the return of method call will be assigned
+to const variable path (left of the '?' base path of the URL *this path will determine
+which screen to show with renderPage()*) and queryString (right of the '?'
+which will have the key & value pairs). new URLSearchParams(pass in the queryString)
+will make it easier to get a value of a key. and will return path and params as object.
+
+*** all of the above gets returned to app.jsx ***
+after it gets loaded to the web
 [] User can sign up.
+
+once user click on the 'Register now' link, since the value of the variable has a '#sign-up'
+will trigger the 'hashchange' event (go to line 109) and will change the route to show the sign-up page:
+  go back to above line 42, 64, 71, 86. similar structure. render again -> React El <PageContainer>
+  with parameter children for renderPage() -> since now the path is 'sign-up'
+  React El. <Auth> -> welcomeMessage   is assigned with string 'Create an account to
+  get started!' -> show the header with new   value of the welcomeMessage ->
+  React El. <AuthForm> -> do constructor and binding methods   -> action is now 'sign-up'
+  -> renders <form>
+
+<form>
+alternateActionHref = '#sign-in' // to toggle between different page by href prop
+alternatActionText = 'Sign in instead'
+submitButtonText = 'Register'
+<a> link will now show 'Sign in instead'
+<button? will now show 'Register'
+
+first input (username), everytime user inputs onChange event will trigger:
+  handleChange will destructure name and value (is the input by user) from target prop of event object.
+  first input (username), everytime user inputs, onChange event will call the handleChange method
+  handleChange for username, since event.target.name will know which input is being
+  changed, then will setState name is in [bracket notation] to user the value of the name as property and
+  assign value to that property (this case username). due to setState, will render again
+  giving back the character value on the input box.
+seconde input for password with text box input will show bullet point instead of
+actual text to protect the password input. onChange event will trigger:
+  same as first input onChange, except that the property is now for password since
+  event.target.name is password (input had name prop for password) and doesn't have
+  the autoFocus.
+<button> type is submit, so once clicked 'Register' after filling out the username and
+password, onSubmit(event) will fire calling the handleSubmit method:
+  handleSubmit method, event.preventDefault() is there to prevent from the page refresh.
+  action = 'sign-up' assign req with object to be used as a second argument for request.
+  method is to post, headers: content-type: application/json to type json, body will
+  stringify the username and password.
+  use fetch to server for the path listed with the value of the variable action/sign-up with req variable.
+
+*** server/index.js ***
+express objects with methods are assigned to defined variable.
+pg.pool to maintain an established connection to the PostgreSQL.
+first it will combine the path given together.
+and express.static adds a middleware for serving files to the Express app.
+middleware makes it possible to access files from this folder.
+express.json(), built in middleware, parse incoming JSON requests and puts the parsed data in req.body
+
+fetch from previous will look at server and look at the request, (this method is post for '/api/auth/sign-up'),
+with second argument of the arrow function with 3 parameter (req, res, next)
+will destructure username and password from req.body. if the !username or !password,
+will call ClientError with 400 status message 'username and password are required fields'
+since the username and password were filled out, will hash the password of argon2 object,
+then set the sql to be used later to insert the new information of user.
+username and hashedPassword will be in array and assisnged to const params to be passed as
+arguments when calling query method(sql, params), this will save/insert the information in
+the database. once saved on database and saved we receive the return, it will
+run a promise method then of the previous return then method to get the user from the result.rows
+and send a response of status 201 with json user (the whole row)
+there is a catch method to catch an error, if there is one, will call the next function with err
+which will call the app.use(errorMiddleware) -> this will check if instance of ClientError  or
+an instance of JsonWebTokenError or something else and will give error accordingly.
+
+*** back to client/components/auth-form.jsx  handleSubmit return of fetch ***
+  once JSON response is received, the return of that is passed as parameter to the
+  arrow function. since the action is 'sign-up' will change the location to 'sign-in' (line 109)
+  triggers 'hashchange'
 
 
 [] User can sign in.
+*** client/components/auth-forms.jsx ***
+the page will look like the first load after the componentDidMount from beginning steps above.
+has sign in and sign up button on navbar, h2 text 'please sign in to continue' <a> link
+'Register now' and <button> 'Log-in'
+when user types in username and password, similar as line 138-156 happens, but this time
+user is actually loggin in and this time the action is 'sign-in'
+when the 'Log-in' button is clicked will fire onSubmit(event) will fire and calls the handleSubmit
+method. with action now 'sign-in'
+similar steps as (line 166 - 1834 but for app.post('/api/auth/sign-in')
+once logged in the
+
+*************** START ABOVE ***********************
+need to explain line 35 of auth-form.jsx
+
+
+
+
+
+
+
+
 
 
 [] User can stay signed in (even if they refresh the page).
+
+{ user !== null ... onClick={handleSignOut}> }
+  ^ if user is not null (signed in), will have a button to sign out and has a props onClick(even) with
+  a value handleSignOut, which is a method from App component that Navbar component has access to.
+  if this button is clicked will run the method in App component
+
+    *** handleSignOut in App component ***
+    will remove the the specified storage object item, for this method it's ('react-context-jwt')
+    this is to remove the token and user from localstorage and reset properties in state.
+    setState user to null, actually log out the user and setState cause to run the render again
 
 
 [] User can sign out.
