@@ -106,14 +106,14 @@ focus(active) when page loads, input for username and password will show with te
 <a> link will show the value of the variable alternateActionHref. 'Register now' link
 <button> for the value of the variable submitButtonText to log-in a user. 'Log-in' button
 
-*** /lib/parse-route.js. *** (for future reference from line 123, 157)
-will check if it starts with '#' sign and chops it off.
-will destructure 1st and 2nd element from the return of the split method of the
-hashRoute object with the string '?' and the return of method call will be assigned
-to const variable path (left of the '?' base path of the URL *this path will determine
-which screen to show with renderPage()*) and queryString (right of the '?'
-which will have the key & value pairs). new URLSearchParams(pass in the queryString)
-will make it easier to get a value of a key. and will return path and params as object.
+/*(doesn't run after line 107 it's for future reference from line 123, 157) *** /lib/parse-route.js. ***
+ *will check if it starts with '#' sign and chops it off.
+ *will destructure 1st and 2nd element from the return of the split method of the
+ *hashRoute object with the string '?' and the return of method call will be assigned
+ *to const variable path (left of the '?' base path of the URL *this path will determine
+ *which screen to show with renderPage()*) and queryString (right of the '?'
+ *which will have the key & value pairs). new URLSearchParams(pass in the queryString)
+ *will make it easier to get a value of a key. and will return path and params as object.
 
 *** all of the above gets returned to app.jsx ***
 after it gets loaded to the web
@@ -211,7 +211,7 @@ which both are true, and will pass the  call this.prop.onSignIn method with resu
 parameter. this.prop.onSignIn is from auth.jsx
 
 *** client/pages/auth.jsx ***
-will call the handleSignIn method from app.jsx
+since user is true will return <Redirect> and since props.to === '', URL.hash will have a string of '#' also will call the handleSignIn method from app.jsx.
 
 *** client/pages/app.jsx ***
 user and token is destructured from variable result and assigned to user and token.
@@ -223,8 +223,8 @@ React El <Navbar>
 
 *** client/component/navbar.jsx ***
 same concept as navbar from above line 54 - 58.
-will create a button with text 'Sign out' with onClick prop that calls the method handleSignOut method
-since the user is not null anymore. there is a user.
+will create a button with text 'Sign out' with onClick prop that calls the method
+handleSignOut method since the user is not null anymore. there is a user.
 and the return of the result of this expression is returned
 
 *** client/pages/app.jsx ***
@@ -237,38 +237,65 @@ off the #) the it will return React El <Home>
 
 *** client/pages/home.jsx ***
 will initialize the styles variable.
-class is defined with Home. will
+class is defined with Home.
 if (!this.context.user) return <Redirect to="sign-in" />; this is there
 incase if user somehow loses track of being signed in if user still truthy
 return the result of expression of the following:
-
-HOME.JSX IN THE CLINET/PAGES RETURN
-
-result of this expression is being returned
-*************** START ABOVE ***********************
-
-*** client/pages/app.jsx ***
-
-
-
-
-
-
-
-
+div with the set styles, iframe for from the src link that will take the
+whole width and the height of the container.
+the expression is being returned.
+the expression from PageContainer is returned
+the expression from App component is returned
+and gets rendered.
 
 
 [] User can stay signed in (even if they refresh the page).
-
-{ user !== null ... onClick={handleSignOut}> }
-  ^ if user is not null (signed in), will have a button to sign out and has a props onClick(even) with
-  a value handleSignOut, which is a method from App component that Navbar component has access to.
-  if this button is clicked will run the method in App component
-
-    *** handleSignOut in App component ***
-    will remove the the specified storage object item, for this method it's ('react-context-jwt')
-    this is to remove the token and user from localstorage and reset properties in state.
-    setState user to null, actually log out the user and setState cause to run the render again
+the current path is '#' when user refreshes the page same steps from line 24-37,
+but this time when the componentDidMount runs, there will be a value for
+window.localStorage.getItem('react-context-jwt'), this is the value(token) that allow browser
+to know that a user is stayed logged in. this value is assigned to the variable token.
+if token is true, then will decode the token to get an object of userId, username, and iat
+that is associated with that token.
+setState method runs with an object as argument, user property with value of user, and
+isAuthorizing: false. and renders again due to setState (updating phase of Lifecycle)
+refer to steps in lines 41 to 50 and lines 224 - 249
 
 
 [] User can sign out.
+continued from line 261, while the user is signed in.
+when user clicks the 'Sign out' button, will trigger onClick (event) and calls
+handleSignOut method in the app component (since Navbar comp, is a subscriber/consumer of App)
+
+*** handleSignOut in App component ***
+will remove the the specified storage object item, for this method it's ('react-context-jwt')
+this is to remove the token and user from localstorage and reset properties in state.
+setState user to null, actually log out the user and setState cause to run the render again
+same steps in lines 41-50
+
+React El <Navbar>
+*** client/component/navbar.jsx ***
+refer to steps in lines 54-62 and is returned
+
+React El <PageContainer>
+*** client/components/page-container.jsx ***
+refer to steps in lines 64-68.
+when the renderPage method is run, the current path is '' so will return React El <Home>
+
+*** client/pages/home.jsx ***
+if (!this.context.user) return <Redirect to="sign-in" />;
+^ since there is no user now (line 272). will return React El <Redirect to='sign-in'>
+
+*** client/components/redirect.jsx ***
+will create new URL object with the window.location and assign to url variable.
+since props.to is now sign-in, will assign it to url.hash.
+the window.location is now replaces with the url which contains the
+URL of the page to navigate to.
+return null, back in home, which returns the return of redirect
+will trigger the 'hashchange' event and will setState for route to 'sign-in'
+and App component renders, same steps for 54-62. and 64-68 and renderPage will run
+since path === 'sign-in' will return the <Auth>
+
+*** client/pages/auth.jsx ***
+refer to steps lines 71-107
+*** all of the above gets returned to app.jsx ***
+after it gets loaded to the web
