@@ -163,7 +163,7 @@ and express.static adds a middleware for serving files to the Express app.
 middleware makes it possible to access files from this folder.
 express.json(), built in middleware, parse incoming JSON requests and puts the parsed data in req.body
 
-fetch from previous will look at server and look at the request, (this method is post for '/api/auth/sign-up'),
+will run app.post('/api/auth/sign-up'),
 with second argument of the arrow function with 3 parameter (req, res, next)
 will destructure username and password from req.body. if the !username or !password,
 will call ClientError with 400 status message 'username and password are required fields'
@@ -186,18 +186,68 @@ an instance of JsonWebTokenError or something else and will give error according
 
 [] User can sign in.
 *** client/components/auth-forms.jsx ***
-the page will look like the first load after the componentDidMount from beginning steps above.
+the page will look like the first load after the componentDidMount from steps beginning.
 has sign in and sign up button on navbar, h2 text 'please sign in to continue' <a> link
 'Register now' and <button> 'Log-in'
 when user types in username and password, similar as line 138-156 happens, but this time
 user is actually loggin in and this time the action is 'sign-in'
 when the 'Log-in' button is clicked will fire onSubmit(event) will fire and calls the handleSubmit
 method. with action now 'sign-in'
-similar steps as (line 166 - 1834 but for app.post('/api/auth/sign-in')
-once logged in the
+similar steps as (line 166 - 184 but for app.post('/api/auth/sign-in')
+will get the username and password, if either one is not provided, will throw a ClientError meesage
+setup the sql with selecting userId, hashedPassword from users table where we try to
+find the information on the matching username.
+will query the database and look for the username that user input if the user is not found
+will throw a ClientError message if found, will destructure userId and the hashedPassword.
+will verify if the hasedPassword and the password by user is matching, if not matching
+will throw ClientError message.
+if matched, object is assigned with userId, username to payload variable. this is used to
+create a variable token with sign method of the jwt object.
 
+*** back to auth-form.jsx ***
+fetch is done and then will parse the JSON. then will have a result as a parameter
+of a arrow function, will skip if action === 'sign-up' and do the else if (result.user && result.toke)
+which both are true, and will pass the  call this.prop.onSignIn method with result
+parameter. this.prop.onSignIn is from auth.jsx
+
+*** client/pages/auth.jsx ***
+will call the handleSignIn method from app.jsx
+
+*** client/pages/app.jsx ***
+user and token is destructured from variable result and assigned to user and token.
+will set the sepcified storage object item (react-context-jwt) with token.
+this will keep the user logged in even when navigating the pages.
+will setState user with the value of the variable user that was destructured.
+setState runs render() repeat line 41 to 50
+React El <Navbar>
+
+*** client/component/navbar.jsx ***
+same concept as navbar from above line 54 - 58.
+will create a button with text 'Sign out' with onClick prop that calls the method handleSignOut method
+since the user is not null anymore. there is a user.
+and the return of the result of this expression is returned
+
+*** client/pages/app.jsx ***
+React El <PageContainer> passing argument this.renderPage()
+
+*** client/components/page-container.jsx ***
+same as line 64-69. except the path is #. the children is the renderPage method in
+app.jsx. inside the renderPage method, the path is '' (since parseRoute will chop
+off the #) the it will return React El <Home>
+
+*** client/pages/home.jsx ***
+will initialize the styles variable.
+class is defined with Home. will
+if (!this.context.user) return <Redirect to="sign-in" />; this is there
+incase if user somehow loses track of being signed in if user still truthy
+return the result of expression of the following:
+
+HOME.JSX IN THE CLINET/PAGES RETURN
+
+result of this expression is being returned
 *************** START ABOVE ***********************
-need to explain line 35 of auth-form.jsx
+
+*** client/pages/app.jsx ***
 
 
 
