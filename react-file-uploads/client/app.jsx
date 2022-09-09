@@ -48,13 +48,14 @@ export default class App extends React.Component {
 
     event.preventDefault();
     const formData = new FormData();
-    formData.append(this.state.caption, this.fileInputRef.current.files[0]);
+    formData.append('caption', this.state.caption);
+    formData.append('image', this.fileInputRef.current.files[0]);
     const req = {
       method: 'POST',
       body: formData
     };
     fetch('/api/uploads', req)
-      .then(res => res.body.json())
+      .then(res => res.json())
       .then(result => {
         console.log(result);
         this.setState({ caption: '' });
@@ -79,7 +80,7 @@ export default class App extends React.Component {
                   autoFocus
                   type="text"
                   id="caption"
-                  name="caption"
+                  name="cap"
                   value={this.state.caption}
                   onChange={this.handleCaptionChange}
                   className="form-control bg-light" />
