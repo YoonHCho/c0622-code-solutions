@@ -9,17 +9,26 @@ class Accordion extends React.Component {
     this.handleAcdn = this.handleAcdn.bind(this);
   }
 
-  // console.log(props);
   handleAcdn(e) {
     // console.log(e);
   }
 
   render() {
-    // console.log(this.props);
-    // const listItems = this.props.map();
-
+    const accordion = this.props.array;
     return (
-      <h4>dfdcc</h4>
+      <>
+        <div className='container'>
+          {accordion.map(accord => {
+            return (
+              <div key={accord.id.toString()} onClick={this.handleAcdn} >
+                <h3 className='col-full'>{accord.topic}</h3>
+                <p className='para'>{accord.detail}</p>
+              </div>
+            );
+          })
+          }
+        </div>
+      </>
     );
   }
 }
