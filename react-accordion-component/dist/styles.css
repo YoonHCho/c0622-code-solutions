@@ -2,10 +2,12 @@
   font-family: monospace;
 }
 
+h3:hover {
+  cursor: pointer;
+}
+
 .container {
   width: 365px;
-  display: flex;
-  flex-wrap: wrap;
   align-content: center;
 }
 
@@ -15,6 +17,7 @@
   margin: 0;
   border: 1px solid black;
   background-color: #ddd;
+  margin-bottom: 2px;
 }
 
 .para {

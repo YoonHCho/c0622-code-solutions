@@ -4,13 +4,17 @@ class Accordion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      test: false
+      paraId: null
     };
     this.handleAcdn = this.handleAcdn.bind(this);
   }
 
-  handleAcdn(e) {
-    // console.log(e);
+  handleAcdn(id) {
+    if (this.state.paraId === id) {
+      this.setState({ paraId: null });
+    } else {
+      this.setState({ paraId: id });
+    }
   }
 
   render() {
@@ -20,9 +24,15 @@ class Accordion extends React.Component {
         <div className='container'>
           {accordion.map(accord => {
             return (
-              <div key={accord.id.toString()} onClick={this.handleAcdn} >
-                <h3 className='col-full'>{accord.topic}</h3>
-                <p className='para'>{accord.detail}</p>
+              <div key={accord.id.toString()}>
+                <div onClick={() => this.handleAcdn(accord.id)}>
+                  <h3 value={accord.id} className='col-full'>{accord.topic}</h3>
+                </div>
+                { this.state.paraId === accord.id &&
+                  <div>
+                    <p value={accord.id} className='para'>{accord.detail}</p>
+                  </div>
+                }
               </div>
             );
           })
@@ -32,5 +42,4 @@ class Accordion extends React.Component {
     );
   }
 }
-
 export default Accordion;
