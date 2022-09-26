@@ -10,7 +10,7 @@ function uniqueLinear(words) {
   ) {
     const word = words[i];          // 2 * n = O(2n)
     if (!seen[word]) {              // 2 * n = O(2n)
-      seen[word] = true;            // 1 * 1 = O(1)
+      seen[word] = true;            // 1 * n = O(n)
       unique[unique.length] = word; // 2 * n = O(2n)
     }
   }
@@ -25,18 +25,18 @@ function uniqueQuadratic(words) {
     i++                             // 2 * n = O(2n)
   ) {
     const word = words[i];          // 2 * n = O(2n)
-    let isUnique = true;            // 1 * 1 = O(1)
+    let isUnique = true;            // 1 * n = O(n)
     for (
       let c = 0;                    // 1 * n = O(1)
       c < i;                        // 2 * n * n = O(2n^2) ~= O(n^2)
       c++                           // 2 * n * n = O(2n^2) ~= O(n^2)
     ) {
-      const comparing = words[c];   // 1 * 1 = O(1)
+      const comparing = words[c];   // 1 * n * n = O(n^2)
       if (comparing === word) {     // 1 * n * n = O(n^2)
-        isUnique = false;           // 1 * 1 = O(1)
+        isUnique = false;           // 1 * n * n = O(n^2)
       }
     }
-    if (isUnique) {                 // 1 * 1 = O(1)
+    if (isUnique) {                 // 1 * n = O(n)
       unique[unique.length] = word; // 2 * n = O(n)
     }
   }
