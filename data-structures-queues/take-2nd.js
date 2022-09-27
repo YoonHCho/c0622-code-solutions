@@ -9,7 +9,6 @@ function take2nd(queue) {
     return first;
   } else {
     const second = queue.dequeue();
-    queue.dequeue();
     queue.enqueue(first);
     return second;
   }
