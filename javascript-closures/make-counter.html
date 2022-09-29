@@ -29,9 +29,18 @@
       };
     };
 
-    console.log(makeCounter);
     const counter1 = makeCounter();
-    console.log(counter1);
+    const counter2 = makeCounter();
+
+    console.log(counter1.value());
+
+    counter1.increment();
+    counter1.increment();
+    console.log(counter1.value());
+
+    counter1.decrement();
+    console.log(counter1.value());
+    console.log(counter2.value());
   </script>
 </body>
 </html>
