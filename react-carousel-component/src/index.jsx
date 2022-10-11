@@ -12,4 +12,4 @@ const images = [
 
 const container = document.querySelector('#root');
 const root = ReactDOM.createRoot(container);
-root.render(<Carousel prop={images} />);
+root.render(<Carousel image={images} />);
