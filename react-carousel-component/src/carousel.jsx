@@ -18,7 +18,7 @@ export default class Carousel extends React.Component {
 
   rightClick(e) {
     if (e) {
-      this.setState({ intervalId: clearInterval(this.state.intervalId) });
+      clearInterval(this.state.intervalId);
       this.setState({ intervalId: setInterval(this.rightClick, 3000) });
     }
     if (this.state.index === this.props.image.length - 1) {
@@ -30,7 +30,7 @@ export default class Carousel extends React.Component {
 
   leftClick(e) {
     if (e) {
-      this.setState({ intervalId: clearInterval(this.state.intervalId) });
+      clearInterval(this.state.intervalId);
       this.setState({ intervalId: setInterval(this.rightClick, 3000) });
     }
     if (this.state.index === 0) {
@@ -41,7 +41,7 @@ export default class Carousel extends React.Component {
   }
 
   buttonClick(e) {
-    this.setState({ intervalId: clearInterval(this.state.intervalId) });
+    clearInterval(this.state.intervalId);
     this.setState({ intervalId: setInterval(this.rightClick, 3000) });
     this.setState({ index: Number(e.target.id) });
   }
